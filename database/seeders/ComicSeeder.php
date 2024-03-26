@@ -8,7 +8,7 @@ use Illuminate\Database\Seeder;
 use App\Models\Comic;
 use Faker\Generator as Faker;
 
-class DatabaseSeeder extends Seeder
+class ComicSeeder extends Seeder
 {
     /**
      * Seed the application's database.
@@ -19,13 +19,12 @@ class DatabaseSeeder extends Seeder
     {
         for($i = 0; $i < 50; $i++) {
           $pasta = new Comic;
-          $pasta->name = $faker->firstNameFemale();
-          $pasta->number = $faker->unique()->numberBetween(1, 100);
-          $pasta->type = $faker->randomElement(['lunga', 'corta', 'cortissima']);
-          $pasta->cooking_time = $faker->numberBetween(8, 14);
-          $pasta->weight = $faker->randomElement([500, 1000]);
-          $pasta->description = $faker->paragraph(8);
-          $pasta->img = "https://picsum.photos/300/200";
+          $pasta->title = $faker->name(30);
+          $pasta->thumb = $faker->title(40);
+          $pasta->price = $faker->numberBetween(12, 25);
+          $pasta->series = $faker->numberBetween(1, 20);
+          $pasta->sale_date = $faker->dateTimeThisYear();
+          $pasta->type = $faker->title(40);
           $pasta->save();
         }
       }}
