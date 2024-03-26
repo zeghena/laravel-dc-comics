@@ -36,3 +36,20 @@
 
 {{-- Se è stata usata la paginazione --}}
 {{ $pastas->links('pagination::bootstrap-5') }}
+
+<table class="table">
+    ...
+    <tbody>
+        @foreach ($comics as $comic)
+        <tr>
+            <th scope="row">{{ $comic->id }}</th>
+            ...
+            <td>
+                <a href="{{ route('comics.show', $comic) }}"> Dettaglio </a>
+
+                ...
+            </td>
+        </tr>
+        @endforeach
+    </tbody>
+</table>

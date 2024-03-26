@@ -54,13 +54,13 @@ class ComicController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
+     * @param  \App\Models\Comic $pasta
+ * @return \Illuminate\Http\Response
+ */
+public function show(Comic $pasta)
+{
+  return view('comics.show', compact('comic'));
+}
 
     /**
      * Update the specified resource in storage.
